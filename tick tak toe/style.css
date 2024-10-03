@@ -1,0 +1,70 @@
+body{
+    background-image: url(image.jpg);
+    align-items: center;
+
+}
+
+.cell{
+    width: 85px;
+    height: 85px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+    
+}
+#gameContainer{
+    font-family: 'Times New Roman', Times, serif;
+   font-size: large;
+    text-align: center;
+    margin-top: 90px;
+    margin-right: 40;
+}
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+
+}
+#button {
+    padding: 15px 30px;
+    font-size: 16px;
+    margin-left: 10px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+#button::after {
+   
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#button:hover::after {
+    width: 400%;
+    height: 400%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#button:hover {
+    color: black;
+    z-index: 1;
+}
